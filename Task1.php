@@ -1,5 +1,5 @@
 <?php
-
+//هنا تعتبر شغالة ascii وطبعا هيا فانكشن build in  هوا حاطط فيها الحروف بس لما اجي عند الz هحتاج هيديني aa وكأنها array فانا هعمل الlen واخليه يبدأ من index 0
     //Print Next Character
 function printNextChar($char){
     $nextChar = ++$char;
