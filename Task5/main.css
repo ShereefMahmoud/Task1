@@ -1,0 +1,28 @@
+.all {
+    /*background-color: lightblue;*/
+    background-image: linear-gradient(to right, lightblue, azure);
+}
+
+.box {
+    width: 50%;
+    height: 80vh;
+    margin: 11vh  auto ;
+    /*background-color:azure;*/
+    background-image: linear-gradient(to left, lightblue, azure);
+    border-radius: 20px;
+}
+
+
+.box div {
+    margin: 15px 20px;
+}
+
+.box button {
+    margin-left: 45%;
+}
+
+.reg_header {
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 5px;
+}
