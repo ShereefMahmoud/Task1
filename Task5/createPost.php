@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         mysqli_close($conn);
         $_SESSION['message'] = $message;
-        header('location: index.php');
+        header('location: show_tasks.php');
     }
 }
 

@@ -5,8 +5,14 @@ session_start();
 //////// Connection db /////////
 require "helpers/conn.php";
 
-$sql = "select * from post";
-$allData = mysqli_query($conn, $sql);
+if ($_SERVER['REQUEST_METHOD']=='POST') {
+            $searchKey = $_POST['search'];
+            $sql = "SELECT * FROM post WHERE title LIKE '%$searchKey%' or content LIKE '%$searchKey%' ";
+        }else{
+            $sql = "SELECT * FROM post";
+            $searchKey="";
+        }
+         $allData = mysqli_query($conn, $sql);
 
 
 
@@ -30,6 +36,11 @@ require "helpers/header.php";
     unset($_SESSION['message']);
   }
   ?>
+  <form class="d-flex " id="search" method="POST" action="<?php echo   htmlspecialchars($_SERVER['PHP_SELF']) ?>">
+           <input class="form-control me-2" type="search" placeholder="Search By Full Name" aria-label="Search" name="search" value="<?php echo $searchKey ?>">
+           <button class="btn btn-dark" type="submit" name="submit">Search</button>
+        </form>
+  
   <table class="table table-striped table-hover">
     <thead>
       <tr>
